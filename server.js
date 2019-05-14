@@ -30,7 +30,7 @@ app.get('/getAPIMeat', (req, res) => {
     console.log(date())
     api_helper.make_API_call('http://carbonateapiprod.azurewebsites.net/api/v1/mealprovidingunits/3d519481-1667-4cad-d2a3-08d558129279/dishoccurrences?startDate='+date())
     .then(response => {
-        let meal = response[0]['displayNames'][1]['dishDisplayName']
+        let meal = response[0]['displayNames'][0]['dishDisplayName']
         console.log("response is ", meal)
         return res.json(meal)
     })
@@ -42,7 +42,7 @@ app.get('/getAPIMeat', (req, res) => {
 app.get('/getAPIVeg', (req, res) => {
     api_helper.make_API_call('http://carbonateapiprod.azurewebsites.net/api/v1/mealprovidingunits/3d519481-1667-4cad-d2a3-08d558129279/dishoccurrences?startDate='+date())
     .then(response => {
-        let meal = response[1]['displayNames'][1]['dishDisplayName']
+        let meal = response[1]['displayNames'][0]['dishDisplayName']
         console.log("response is ", meal)
         return res.json(meal)
     })
