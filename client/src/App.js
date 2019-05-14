@@ -43,7 +43,9 @@ render() {
 
       <div className="App">
           <main className = "main">
+                <h1>Express:</h1>
                 <h1>{this.state.response1}</h1>
+                <h1>Express veg:</h1>
                 <h1>{this.state.response2}</h1>
           </main>  
       </div>
